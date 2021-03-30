@@ -10,9 +10,7 @@
     // $row = mysqli_fetch_assoc($result);
     // print_r($row);
 
-    while($row = mysqli_fetch_assoc($result)){
-        print_r($row);
-    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +21,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <table border="1" width="600">
+    <?php
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<tr>";
+            echo "<td>".$row["name"]."</td>";
+            echo "<td>".$row["phone"]."</td>";
+            echo "<td>".$row["mail"]."</td>";
+            echo "<td>".$row["gender"]."</td>";
+            echo "</tr>";
+        }
+    ?>
+    </table>
 </body>
 </html>
