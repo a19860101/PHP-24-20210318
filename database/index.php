@@ -21,17 +21,33 @@
     <title>Document</title>
 </head>
 <body>
+
     <table border="1" width="600">
-    <?php
-        while($row = mysqli_fetch_assoc($result)){
-            echo "<tr>";
-            echo "<td>".$row["name"]."</td>";
-            echo "<td>".$row["phone"]."</td>";
-            echo "<td>".$row["mail"]."</td>";
-            echo "<td>".$row["gender"]."</td>";
-            echo "</tr>";
-        }
-    ?>
+        <?php while($row = mysqli_fetch_assoc($result)){ ?>
+        <tr>
+            <td><?php echo $row["name"];?></td>
+            <td><?php echo $row["mail"];?></td>
+            <td><?php echo $row["phone"];?></td>
+            <td><?php echo $row["gender"];?></td>
+        </tr>
+        <?php } ?>
     </table>
+
+
+
+
+
+    <!-- <table border="1" width="600"> -->
+    <?php
+        // while($row = mysqli_fetch_assoc($result)){
+        //     echo "<tr>";
+        //     echo "<td>".$row["name"]."</td>";
+        //     echo "<td>".$row["phone"]."</td>";
+        //     echo "<td>".$row["mail"]."</td>";
+        //     echo "<td>".$row["gender"]."</td>";
+        //     echo "</tr>";
+        // }
+    ?>
+    <!-- </table> -->
 </body>
 </html>
