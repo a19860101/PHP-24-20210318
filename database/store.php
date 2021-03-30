@@ -1,5 +1,5 @@
 <?php
-
+    require_once("conn.php");
     // print_r($_POST);
 
     // echo $_POST["name"];
@@ -18,7 +18,13 @@
     // echo "<br>";
 
     extract($_POST);
-    echo implode(",",$skill);
+    // echo implode(",",$skill);
+    $skill = implode(",",$skill);
 
     // extract($_GET);
     // echo implode(",",$skill);
+
+    $sql = "INSERT INTO students(name,phone,mail,gender,edu,skill,content,created_at)
+            VALUES('$name','$phone','$mail','$gender','$edu','$skill','$content',NOW())";
+
+    mysqli_query($conn,$sql);
