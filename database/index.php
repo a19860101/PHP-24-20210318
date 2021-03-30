@@ -21,8 +21,16 @@
     <title>Document</title>
 </head>
 <body>
-
+    <nav>
+        <a href="create.php">新增學員資料</a>
+    </nav>
     <table border="1" width="600">
+        <tr>
+            <th>姓名</th>
+            <th>MAIL</th>
+            <th>電話</th>
+            <th>性別</th>
+        </tr>
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
         <tr>
             <td><?php echo $row["name"];?></td>
