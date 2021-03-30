@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>新增學員資料</h1>
-    <form action="">
+    <form action="store.php" method="post">
         <div>
             <label for="">姓名</label>
             <input type="text" name="name">
@@ -42,17 +42,18 @@
         <div>
             <label for="">專長</label>
 
-            <input type="checkbox" name="skill" value="網頁設計">
+            <input type="checkbox" name="skill[]" value="網頁設計">
             <label for="">網頁設計</label>
-            <input type="checkbox" name="skill" value="平面設計">
+            <input type="checkbox" name="skill[]" value="平面設計">
             <label for="">平面設計</label>
-            <input type="checkbox" name="skill" value="3D動畫">
+            <input type="checkbox" name="skill[]" value="3D動畫">
             <label for="">3D動畫</label>
         </div>
         <div>
             <label for="">備註</label>
             <textarea name="content" id="" cols="30" rows="10"></textarea>
         </div>
+        <input type="submit" value="新增">
     </form>
 </body>
 </html>
