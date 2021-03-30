@@ -28,3 +28,8 @@
             VALUES('$name','$phone','$mail','$gender','$edu','$skill','$content',NOW())";
 
     mysqli_query($conn,$sql);
+
+    // header("location:index.php");
+
+    echo "資料已新增";
+    header("refresh:2;url=index.php");
