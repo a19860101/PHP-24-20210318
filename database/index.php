@@ -26,17 +26,26 @@
     </nav>
     <table border="1" width="600">
         <tr>
+            <th>#</th>
             <th>姓名</th>
             <th>MAIL</th>
             <th>電話</th>
             <th>性別</th>
+            <th>動作</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
         <tr>
+            <td><?php echo $row["id"];?></td>
             <td><?php echo $row["name"];?></td>
             <td><?php echo $row["mail"];?></td>
             <td><?php echo $row["phone"];?></td>
             <td><?php echo $row["gender"];?></td>
+            <td>
+                <form action="delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row["id"];?>">
+                    <input type="submit" value="刪除">
+                </form>
+            </td>
         </tr>
         <?php } ?>
     </table>
