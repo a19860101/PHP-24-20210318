@@ -4,11 +4,15 @@
     $sql = "SELECT * FROM students";
     $result = mysqli_query($conn,$sql);
 
-    $row = mysqli_fetch_assoc($result);
-    print_r($row);
+    // $row = mysqli_fetch_assoc($result);
+    // print_r($row);
 
     // $row = mysqli_fetch_assoc($result);
     // print_r($row);
+
+    while($row = mysqli_fetch_assoc($result)){
+        print_r($row);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
