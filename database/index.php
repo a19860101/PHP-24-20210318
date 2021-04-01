@@ -31,6 +31,7 @@
             <th>MAIL</th>
             <th>電話</th>
             <th>性別</th>
+            <th>學歷</th>
             <th>動作</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
@@ -40,6 +41,7 @@
             <td><?php echo $row["mail"];?></td>
             <td><?php echo $row["phone"];?></td>
             <td><?php echo $row["gender"];?></td>
+            <td><?php echo $row["edu"];?></td>
             <td>
                 <form action="delete.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $row["id"];?>">
