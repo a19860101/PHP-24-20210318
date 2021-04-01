@@ -1,5 +1,10 @@
 <?php
-    echo $_GET["id"];
+    require_once("conn.php");
+    extract($_GET);
+
+    $sql = "SELECT * FROM students WHERE id = {$id}";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,15 +19,15 @@
     <form action="update.php" method="post">
         <div>
             <label for="">姓名</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<?php echo $row["name"];?>">
         </div>
         <div>
             <label for="">電話</label>
-            <input type="text" name="phone">
+            <input type="text" name="phone" value="<?php echo $row["phone"];?>">
         </div>
         <div>
             <label for="">E-mail</label>
-            <input type="text" name="mail">
+            <input type="text" name="mail"  value="<?php echo $row["mail"];?>">
         </div>
         <div>
             <label for="">性別</label>
@@ -54,7 +59,7 @@
         </div>
         <div>
             <label for="">備註</label>
-            <textarea name="content" id="" cols="30" rows="10"></textarea>
+            <textarea name="content" id="" cols="30" rows="10"><?php echo $row["content"];?></textarea>
         </div>
         <input type="submit" value="新增">
         <input type="button" value="取消" onclick="history.back()">
