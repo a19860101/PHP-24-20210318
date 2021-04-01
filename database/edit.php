@@ -48,13 +48,17 @@
             </select>
         </div>
         <div>
+            <?php
+                $skills = explode(",",$row["skill"]);
+                // print_r($skills);
+            ?>
             <label for="">專長</label>
 
-            <input type="checkbox" name="skill[]" value="網頁設計">
+            <input type="checkbox" name="skill[]" value="網頁設計" <?php echo in_array("網頁設計",$skills)? "checked":""; ?>>
             <label for="">網頁設計</label>
-            <input type="checkbox" name="skill[]" value="平面設計">
+            <input type="checkbox" name="skill[]" value="平面設計" <?php echo in_array("平面設計",$skills)? "checked":""; ?>>
             <label for="">平面設計</label>
-            <input type="checkbox" name="skill[]" value="3D動畫">
+            <input type="checkbox" name="skill[]" value="3D動畫" <?php echo in_array("3D動畫",$skills)? "checked":""; ?>>
             <label for="">3D動畫</label>
         </div>
         <div>
