@@ -65,7 +65,8 @@
             <label for="">備註</label>
             <textarea name="content" id="" cols="30" rows="10"><?php echo $row["content"];?></textarea>
         </div>
-        <input type="submit" value="新增">
+        <input type="hidden" name="id" value="<?php echo $row["id"];?>">
+        <input type="submit" value="更新">
         <input type="button" value="取消" onclick="history.back()">
         <input type="button" value="取消" onclick="location.href='index.php'">
     </form>
