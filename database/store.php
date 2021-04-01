@@ -27,7 +27,9 @@
     $sql = "INSERT INTO students(name,phone,mail,gender,edu,skill,content,created_at)
             VALUES('$name','$phone','$mail','$gender','$edu','$skill','$content',NOW())";
 
-    mysqli_query($conn,$sql);
+//     mysqli_query($conn,$sql);
+    $conn->query($sql);
+        
 
     // header("location:index.php");
 

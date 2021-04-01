@@ -14,6 +14,7 @@
             skill   = '$skill'
             WHERE id = {$id}
     ";
-    mysqli_query($conn,$sql);
+    // mysqli_query($conn,$sql);
+    $conn->query();
     echo "資料已更新";
     header("refresh:2;url=index.php");

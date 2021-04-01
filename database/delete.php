@@ -3,7 +3,8 @@
     extract($_POST);
 
     $sql = "DELETE FROM students WHERE id = $id";
-    mysqli_query($conn,$sql);
+    // mysqli_query($conn,$sql);
+    $conn->query($sql);
 
     echo "資料已刪除";
     header("refresh:2;url=index.php");

@@ -3,8 +3,11 @@
     extract($_GET);
 
     $sql = "SELECT * FROM students WHERE id = {$id}";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($result);
+    // $result = mysqli_query($conn,$sql);
+    // $row = mysqli_fetch_assoc($result);
+
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">

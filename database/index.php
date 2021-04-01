@@ -2,7 +2,8 @@
     require_once("conn.php");
 
     $sql = "SELECT * FROM students";
-    $result = mysqli_query($conn,$sql);
+    // $result = mysqli_query($conn,$sql);
+    $result = $conn->query($sql);
 
     // $row = mysqli_fetch_assoc($result);
     // print_r($row);
@@ -34,7 +35,8 @@
             <th>學歷</th>
             <th>動作</th>
         </tr>
-        <?php while($row = mysqli_fetch_assoc($result)){ ?>
+        <?php //while($row = mysqli_fetch_assoc($result)){ ?>
+        <?php while($row = $result->fetch_assoc()){ ?>
         <tr>
             <td><?php echo $row["id"];?></td>
             <td><?php echo $row["name"];?></td>
