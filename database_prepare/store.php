@@ -11,8 +11,10 @@
     
     $stmt->bind_param("sssssss",$name,$phone,$mail,$gender,$edu,$skill,$content);
 
-    
-    // $conn->query($sql);
+    /*
+        s: string
+        i: integer
+    */
     $stmt->execute();
 
     echo "資料已新增";
