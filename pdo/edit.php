@@ -3,11 +3,16 @@
         require_once("pdo.php");
         extract($_GET);
     
-        $sql = "SELECT * FROM students WHERE id = ? ";
+        // $sql = "SELECT * FROM students WHERE id = ? ";
+        // $stmt = $pdo->prepare($sql);
+        // $stmt->execute([$id]);
+        $sql = "SELECT * FROM students WHERE id = :id ";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$id]);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+
         $row = $stmt->fetch();
-        
+
     }catch(PDOException $e){
         echo $e->getMessage();
     }
