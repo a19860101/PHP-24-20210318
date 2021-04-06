@@ -21,7 +21,6 @@
     
         $stmt = $pdo->prepare($sql);
         
-        $now = date("Y-m-d H:i:s");
 
         $stmt->execute([$name,$phone,$mail,$gender,$edu,$skill,$content,$now]);
         
