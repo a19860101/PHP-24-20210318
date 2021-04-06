@@ -1,15 +1,17 @@
 <?php
-    require_once("conn.php");
-    extract($_GET);
+    try{
+        require_once("pdo.php");
+        extract($_GET);
+    
+        $sql = "SELECT * FROM students WHERE id = ? ";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+        $row = $stmt->fetch();
+        
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
 
-    $sql = "SELECT * FROM students WHERE id = ? ";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i",$id);
-    $stmt->execute();
-
-    $result = $stmt->get_result();
-
-    $row = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
