@@ -5,16 +5,19 @@
     extract($_POST);
     $skill = implode(",",$skill);
     $sql = "UPDATE students SET 
-            name    = '$name' ,
-            mail    = '$mail' ,
-            phone   = '$phone' ,
-            edu     = '$edu' ,
-            gender  = '$gender' ,
-            content = '$content' ,
-            skill   = '$skill'
-            WHERE id = {$id}
+            name    = ? ,
+            mail    = ? ,
+            phone   = ? ,
+            edu     = ? ,
+            gender  = ? ,
+            content = ? ,
+            skill   = ?
+            WHERE id = ?
     ";
-    // mysqli_query($conn,$sql);
-    $conn->query();
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssssssi",$name,$mail,$phone,$edu,$gender,$content,$skill,$id);
+	$stmt->execute();
+
+
     echo "資料已更新";
     header("refresh:2;url=index.php");
