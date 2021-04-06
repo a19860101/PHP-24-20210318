@@ -2,11 +2,13 @@
     require_once("conn.php");
     extract($_GET);
 
-    $sql = "SELECT * FROM students WHERE id = {$id}";
-    // $result = mysqli_query($conn,$sql);
-    // $row = mysqli_fetch_assoc($result);
+    $sql = "SELECT * FROM students WHERE id = ? ";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i",$id);
+    $stmt->execute();
 
-    $result = $conn->query($sql);
+    $result = $stmt->get_result();
+
     $row = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
