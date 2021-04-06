@@ -1,7 +1,6 @@
 <?php
     require_once("conn.php");
 
-    // print_r($_POST);
     extract($_POST);
     $skill = implode(",",$skill);
     $sql = "UPDATE students SET 
