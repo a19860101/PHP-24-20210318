@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-03-30 15:58:58
+-- 產生時間： 2021-04-08 15:11:27
 -- 伺服器版本： 10.4.14-MariaDB
 -- PHP 版本： 7.4.10
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `php-24-20210318`
 --
-CREATE DATABASE IF NOT EXISTS `php-24-20210318` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `php-24-20210318`;
 
 -- --------------------------------------------------------
 
@@ -49,8 +47,12 @@ INSERT INTO `students` (`id`, `name`, `phone`, `mail`, `gender`, `edu`, `skill`,
 (2, 'JOHN', '0912345678', 'asdf@gmail.com', '男', '大專院校', '網頁設計', '', '2021-03-25 20:12:48'),
 (5, 'May', '0965321547', 'mary@asdf.com', '女', '大專院校', '', '', '2021-03-30 19:28:22'),
 (6, 'Nick', '0987652154', 'nick@gmail.com', '男', '研究所以上', '網頁設計,平面設計', '', '2021-03-30 21:05:28'),
-(7, 'Kate', '0963215478', 'kjage@gmail.com', '女', '大專院校', '3D動畫', '無', '2021-03-30 21:06:25'),
-(8, 'Vivian', '0965321548', 'vivi@gmail.com', '女', '研究所以上', '平面設計', 'HELLO', '2021-03-30 21:18:59');
+(7, 'Kate', '0963215478', 'kjage@gmail.com', '女', '研究所以上', '3D動畫', '無', '2021-03-30 21:06:25'),
+(8, 'Vivian', '0965321548', 'vivi@gmail.com', '女', '研究所以上', '平面設計', 'HELLO', '2021-03-30 21:18:59'),
+(12, 'Kelly Lee', '0963258741', '12345798@gmail.com', '女', '研究所以上', '網頁設計,平面設計,3D動畫', 'test', '2021-04-01 20:02:33'),
+(13, '陳大華', '0965478912', '123@gmail.com', '男', '國小', '網頁設計', '123456789', '2021-04-01 20:58:26'),
+(18, 'Louis', 'asdgasdg', 'asdgasdg', '男', '大專院校', '網頁設計', 'asdgasdg', '2021-04-01 21:39:47'),
+(27, '789', '789', '789', '男', '研究所以上', '網頁設計', '789', '2021-04-06 21:25:40');
 
 --
 -- 已傾印資料表的索引
@@ -70,7 +72,7 @@ ALTER TABLE `students`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
