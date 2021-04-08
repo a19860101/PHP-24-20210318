@@ -32,12 +32,18 @@
 
     // echo "<br>";
     // echo $type;
-    // if($error == 0){
-        // if(move_uploaded_file($tmp_name,"images/".$name)){
-            // echo "上傳成功";
-            // header("Refresh:1;url=index.php");
-        // }
-    // }
+    if(!is_dir("images")){
+        mkdir("images");
+    }
+
+    if($error == 0){
+        if(move_uploaded_file($tmp_name,"images/".$img)){
+            echo "上傳成功";
+            header("Refresh:1;url=index.php");
+        }else{
+            echo "上傳失敗";
+        }
+    }
     /*
         只有圖片可以上傳
         檔名要亂數
