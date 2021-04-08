@@ -23,8 +23,12 @@
     // echo "<br>";
 
     if($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif" ){
-        echo "檔案類型錯誤。請上船正確的圖片檔案";
+        header("location:index.php?error=1");
+        return;
     }
+    $img = md5(uniqid()).".".$ext;
+
+    echo $img;
 
     // echo "<br>";
     // echo $type;

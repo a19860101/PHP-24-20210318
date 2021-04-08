@@ -11,5 +11,13 @@
         <input type="file" name="pic">
         <input type="submit" value="上傳">
     </form>
+
+    <?php
+        // $text = "hello";
+        //加密 md5() sha1()
+        // uniqid()
+        // time();
+        // echo md5(time());
+    ?>
 </body>
 </html>
