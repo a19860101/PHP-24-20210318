@@ -11,7 +11,9 @@
         <input type="file" name="pic">
         <input type="submit" value="上傳">
     </form>
-
+    <div>
+        <a href="list.php">圖片列表</a>
+    </div>
     <?php
         // $text = "hello";
         //加密 md5() sha1()
