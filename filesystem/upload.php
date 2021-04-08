@@ -1,4 +1,5 @@
 <?php
+    require_once("pdo.php");
     // print_r($_FILES);
     // echo "<br>";
     // print_r($_FILES["pic"]);
@@ -28,17 +29,19 @@
     }
     $img = md5(uniqid()).".".$ext;
 
-    echo $img;
-
-    // echo "<br>";
-    // echo $type;
     if(!is_dir("images")){
         mkdir("images");
     }
 
+    $target = "images/".$img;
+
+    $sql = "INSERT INTO imgs(img,created_at)VALUES(?,?)";
+    $stmt = $pdo->prepare($sql);
+
     if($error == 0){
-        if(move_uploaded_file($tmp_name,"images/".$img)){
+        if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
+            $stmt->execute([$img,$now]);
             header("Refresh:1;url=index.php");
         }else{
             echo "上傳失敗";
