@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-04-08 15:12:34
+-- 產生時間： 2021-04-13 13:52:21
 -- 伺服器版本： 10.4.14-MariaDB
 -- PHP 版本： 7.4.10
 
@@ -35,12 +35,18 @@ CREATE TABLE `imgs` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- 傾印資料表的資料 `imgs`
+-- 資料表結構 `members`
 --
 
-INSERT INTO `imgs` (`id`, `img`, `created_at`) VALUES
-(2, '4bc3a12e7e1c7049d2c1965c9318a509.jpg', '2021-04-08 21:08:54');
+CREATE TABLE `members` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `pw` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -86,6 +92,12 @@ ALTER TABLE `imgs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `students`
 --
 ALTER TABLE `students`
@@ -99,7 +111,13 @@ ALTER TABLE `students`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `imgs`
 --
 ALTER TABLE `imgs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `members`
+--
+ALTER TABLE `members`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `students`

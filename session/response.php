@@ -12,5 +12,5 @@
     $_SESSION["AUTH"] = $_POST;
 
     // echo $_SESSION["USER"],$_SESSION["MAIL"],$_SESSION["PW"];
-
-    header("refresh:2;url=index.php");
+    echo "<script>alert('您已登入');</script>";
+    header("refresh:0;url=index.php");
