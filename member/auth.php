@@ -8,5 +8,10 @@
     $stmt->execute([$user]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    print_r($row);
-    var_dump($row);
+    if(md5($pw) == $row["pw"]){
+        $_SESSION["AUTH"] = $row;
+        echo "登入成功";
+        print_r($_SESSION["AUTH"]);
+    }else{
+        echo "帳號或密碼錯誤";
+    }
