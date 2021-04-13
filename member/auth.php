@@ -7,11 +7,17 @@
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$user]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    if(!$row){
+        // echo "<script>alert('帳號不存在');</script>";
+        echo "<script>alert('帳號或密碼錯誤');</script>";
+        header("refresh:0;url=index.php");
+        return;
+    }
     if(md5($pw) == $row["pw"]){
         $_SESSION["AUTH"] = $row;
-        echo "登入成功";
-        print_r($_SESSION["AUTH"]);
+        echo "<script>alert('登入成功');</script>";
+        header("refresh:0;url=index.php");
     }else{
-        echo "帳號或密碼錯誤";
+        echo "<script>alert('帳號或密碼錯誤');</script>";
+        header("refresh:0;url=index.php");
     }
