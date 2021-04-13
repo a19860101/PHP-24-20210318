@@ -11,12 +11,13 @@
 </head>
 <body>
     <nav>
-        <?php if(!isset($_SESSION["AUTH"])){ ?>
+    <?php if(!isset($_SESSION["AUTH"])){ ?>
         <a href="login.php">登入</a>
         <a href="register.php">註冊會員</a>
-        <?php }else{ ?>
+    <?php }else{ ?>
+        <a href="detail.php">會員資料</a>
         <a href="logout.php">登出</a>
-        <?php } ?>
+    <?php } ?>
     </nav>
 </body>
 </html>
