@@ -15,6 +15,11 @@
                 最後更新時間: <?php echo $post["updated_at"];?>
             </div>
             <a href="index.php" class="btn btn-success">文章列表</a>
+            <a href="post-edit.php?id=<?php echo $post["id"];?>" class="btn btn-info">編輯文章</a>
+            <form action="post-delete.php" method="post" class="d-inline-block">
+                <input type="hidden" name="id" value="<?php echo $post["id"];?>">
+                <input type="submit" value="刪除" class="btn btn-danger">
+            </form>
         </div>
     </div>
 </div>
