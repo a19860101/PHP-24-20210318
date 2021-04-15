@@ -10,6 +10,14 @@
         }
         return $posts;
     }
+    function showPost($id){
+        require_once("pdo.php");
+        $sql = "SELECT * FROM posts WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+        $post = $stmt->fetch();
+        return $post;
+    }
     function storePost($request){
         require_once("pdo.php");
         extract($request);
