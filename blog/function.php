@@ -34,7 +34,14 @@
         $post = $stmt->fetch();
         return $post;
     }
-    
+    function updatePost($request){
+        require_once("pdo.php");
+        extract($request);
+        $sql = "UPDATE posts SET title=?,content=?,category_id=?,updated_at=? WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$title, $content, $category_id, $now, $id]);
+
+    }
     function deletePost($request){
         require_once("pdo.php");
         extract($request);
