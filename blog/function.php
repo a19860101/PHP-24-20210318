@@ -26,7 +26,15 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$title, $content, $category_id, $member_id, $now, $now]);
     }
-
+    function editPost($id){
+        require_once("pdo.php");
+        $sql = "SELECT * FROM posts WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+        $post = $stmt->fetch();
+        return $post;
+    }
+    
     function deletePost($request){
         require_once("pdo.php");
         extract($request);
