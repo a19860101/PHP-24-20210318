@@ -1,7 +1,7 @@
 <?php
     function showAllPosts(){
         require_once("pdo.php");
-        $sql = "SELECT * FROM posts";
+        $sql = "SELECT * FROM posts ORDER BY id DESC";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $posts = array();
