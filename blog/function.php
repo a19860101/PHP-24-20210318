@@ -1,4 +1,15 @@
 <?php
+    function showAllPosts(){
+        require_once("pdo.php");
+        $sql = "SELECT * FROM posts";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $posts = array();
+        while($row = $stmt->fetch()){
+            $posts[] = $row;
+        }
+        return $posts;
+    }
     function storePost($request){
         require_once("pdo.php");
         extract($request);
