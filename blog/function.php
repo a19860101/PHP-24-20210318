@@ -26,3 +26,11 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$title, $content, $category_id, $member_id, $now, $now]);
     }
+
+    function deletePost($request){
+        require_once("pdo.php");
+        extract($request);
+        $sql = "DELETE FROM posts WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+    }
