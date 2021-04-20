@@ -16,8 +16,12 @@
         <div class="col-10 border border-dark mb-3 p-5 rounded">
             <h2><?php echo $post["title"];?></h2>
             <div class="content">
-                <?php echo $post["content"];?>
-                <a href="post-show.php?id=<?php echo $post["id"];?>">繼續閱讀</a>
+                <?php 
+                    $content = strip_tags($post["content"]);
+                    echo mb_substr($content,0,150);
+                ?>...
+                <br>
+                <a href="post-show.php?id=<?php echo $post["id"];?>" class="btn btn-primary">繼續閱讀</a>
             </div>
             <div>
                 最後更新時間: <?php echo $post["updated_at"];?>
