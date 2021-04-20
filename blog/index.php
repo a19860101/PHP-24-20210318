@@ -16,7 +16,8 @@
         <div class="col-10 border border-dark mb-3 p-5 rounded">
             <h2><?php echo $post["title"];?></h2>
             <div>
-                <?php echo $post["user"];?>
+                
+                <a href="post-members.php?member_id=<?php echo $post["member_id"];?>"><?php echo $post["user"];?></a>
             </div>
             <div class="content my-3">
                 <?php 
