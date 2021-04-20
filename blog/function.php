@@ -20,9 +20,10 @@
     }
     function storePost($request){
         require_once("pdo.php");
+        session_start();
         extract($request);
         $sql = "INSERT INTO posts(title, content, category_id, member_id, created_at, updated_at)VALUES(?,?,?,?,?,?)";
-        $member_id = 1;
+        $member_id = $_SESSION["AUTH"]["id"];
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$title, $content, $category_id, $member_id, $now, $now]);
     }

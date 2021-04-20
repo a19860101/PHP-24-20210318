@@ -8,9 +8,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+            <?php if(isset($_SESSION["AUTH"])){ ?> 
             <li class="nav-item">
                 <a class="nav-link" href="post-create.php">新增文章</a>
             </li>
+            <?php } ?>
         </ul>
         <ul class="navbar-nav ml-auto">
             <?php if(!isset($_SESSION["AUTH"])){ ?>
