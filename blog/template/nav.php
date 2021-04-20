@@ -14,7 +14,7 @@
                 <a href="login.php" class="nav-link">登入</a>
             </li>
             <li class="nav-item ">
-                <a href="login.php" class="nav-link">註冊會員</a>
+                <a href="register.php" class="nav-link">註冊會員</a>
             </li>
             <li class="nav-item ">
                 <a href="login.php" class="nav-link">登出</a>
