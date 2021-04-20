@@ -7,8 +7,6 @@
 <?php 
     require_once("function.php"); 
     $posts = showAllPosts();    
-    session_start();
-    print_r($_SESSION["AUTH"]);
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
