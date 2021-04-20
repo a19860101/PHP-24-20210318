@@ -15,6 +15,9 @@
         <?php foreach($posts as $post){ ?>
         <div class="col-10 border border-dark mb-3 p-5 rounded">
             <h2><?php echo $post["title"];?></h2>
+            <div>
+                <?php echo $post["user"];?>
+            </div>
             <div class="content my-3">
                 <?php 
                     $content = strip_tags($post["content"]);

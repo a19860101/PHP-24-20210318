@@ -1,7 +1,7 @@
 <?php
     function showAllPosts(){
         require_once("pdo.php");
-        $sql = "SELECT * FROM posts ORDER BY id DESC";
+        $sql = "SELECT * FROM posts LEFT JOIN members ON members.id = posts.member_id ORDER BY posts.id DESC";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $posts = array();
