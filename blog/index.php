@@ -5,6 +5,7 @@
     require_once()
  -->
 <?php 
+    require_once("pdo.php"); 
     require_once("function.php"); 
     $posts = showAllPosts();  
 ?>
@@ -34,6 +35,9 @@
         <?php foreach($posts as $post){ ?>
         <div class="col-10 border border-dark mb-3 p-5 rounded">
             <h2><?php echo $post["title"];?></h2>
+            <div>
+                分類: <?php echo $post["c_title"];?>
+            </div>
             <div>
                 
                 <a href="post-members.php?member_id=<?php echo $post["member_id"];?>"><?php echo $post["user"];?></a>

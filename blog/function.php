@@ -1,7 +1,10 @@
 <?php
     function showAllPosts(){
         global $pdo;
-        $sql = "SELECT posts.*,members.user FROM posts LEFT JOIN members ON members.id = posts.member_id ORDER BY posts.id DESC";
+        $sql = "SELECT posts.*,members.user,categories.title AS c_title FROM posts 
+                LEFT JOIN members ON posts.member_id = members.id
+                LEFT JOIN categories ON posts.category_id = categories.id 
+                ORDER BY posts.id DESC";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $posts = array();
@@ -79,6 +82,7 @@
     }
     function register($request){
         global $pdo;
+        global $now;
         extract($request);
 
         //判斷會員名稱是否存在

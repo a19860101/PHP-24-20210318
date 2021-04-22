@@ -1,4 +1,5 @@
 <?php
+    require_once("pdo.php");
     require_once("function.php");
     if(isset($_POST["submit"])){
         register($_POST);
