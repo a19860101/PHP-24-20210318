@@ -7,7 +7,7 @@
         </div>
         <div class="w-100"></div>
         <div class="col-6">
-            <form action="">
+            <form action="store.php" method="post">
                 <div class="form-group">
                     <label for="title">分類標題</label>
                     <input type="text" name="title" id="title" class="form-control">
