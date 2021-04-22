@@ -26,7 +26,13 @@
         <div class="col-4">
             <ul>
                 <?php foreach($categories as $category){ ?>
-                <li><?php echo $category["title"]; ?></li>
+                <li class="d-flex justify-content-between">
+                    <?php echo $category["title"]; ?>
+                    <form action="delete.php" method="post" class="d-inline-block">
+                        <input type="hidden" name="id" value="<?php echo $category["id"];?>">
+                        <input type="submit" class="btn btn-danger btn-sm" value="刪除" onclick="return confirm('確認刪除?')">
+                    </form>
+                </li>
                 <?php } ?>
             </ul>
         </div>
