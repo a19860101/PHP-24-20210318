@@ -1,6 +1,6 @@
 <?php
     function showAllCategories(){
-        require_once("../pdo.php");
+        global $pdo;
         $sql = "SELECT * FROM categories";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
@@ -11,15 +11,15 @@
         return $categories;
     }
     function storeCategory($request){
-        require_once("../pdo.php");
-        // session_start();
+        global $pdo;
+        global $now;
         extract($request);
         $sql = "INSERT INTO categories(title, slug, created_at)VALUES(?,?,?)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$title, $slug,  $now]);
     }
     function deleteCategory($request){
-        require_once("../pdo.php");
+        global $pdo;
         extract($request);
         $sql = "DELETE FROM categories WHERE id = ?";
         $stmt = $pdo->prepare($sql);

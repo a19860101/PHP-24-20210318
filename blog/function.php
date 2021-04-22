@@ -1,6 +1,6 @@
 <?php
     function showAllPosts(){
-        require_once("pdo.php");
+        global $pdo;
         $sql = "SELECT posts.*,members.user FROM posts LEFT JOIN members ON members.id = posts.member_id ORDER BY posts.id DESC";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
@@ -11,7 +11,7 @@
         return $posts;
     }
     function showPost($id){
-        require_once("pdo.php");
+        global $pdo;
         $sql = "SELECT * FROM posts WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$id]);
@@ -19,7 +19,8 @@
         return $post;
     }
     function storePost($request){
-        require_once("pdo.php");
+        global $pdo;
+        global $now;
         session_start();
         extract($request);
         $sql = "INSERT INTO posts(title, content, category_id, member_id, created_at, updated_at)VALUES(?,?,?,?,?,?)";
@@ -28,7 +29,7 @@
         $stmt->execute([$title, $content, $category_id, $member_id, $now, $now]);
     }
     function editPost($id){
-        require_once("pdo.php");
+        global $pdo;
         $sql = "SELECT * FROM posts WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$id]);
@@ -36,7 +37,8 @@
         return $post;
     }
     function updatePost($request){
-        require_once("pdo.php");
+        global $pdo;
+        global $now;
         extract($request);
         $sql = "UPDATE posts SET title=?,content=?,category_id=?,updated_at=? WHERE id = ?";
         $stmt = $pdo->prepare($sql);
@@ -44,7 +46,7 @@
 
     }
     function deletePost($request){
-        require_once("pdo.php");
+        global $pdo;
         extract($request);
         $sql = "DELETE FROM posts WHERE id = ?";
         $stmt = $pdo->prepare($sql);
@@ -53,7 +55,7 @@
 
     function auth($request){
         session_start();
-        require_once("pdo.php");
+        global $pdo;
         extract($request);
 
         $sql = "SELECT * FROM members WHERE user = ?";
@@ -76,7 +78,7 @@
         }
     }
     function register($request){
-        require_once("pdo.php");
+        global $pdo;
         extract($request);
 
         //判斷會員名稱是否存在

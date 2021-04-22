@@ -1,4 +1,5 @@
 <?php
+    require_once("pdo.php");
     require_once("category/function.php");
     $categories = showAllCategories();
 ?>
