@@ -1,4 +1,7 @@
-
+<?php
+    require_once("category/function.php");
+    $categories = showAllCategories();
+?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
 
@@ -17,9 +20,9 @@
                 <div class="form-group">
                     <label for="category_id">文章分類</label>
                     <select name="category_id" id="category_id" class="form-control">
-                        <option value="1">體育</option>
-                        <option value="2">科技</option>
-                        <option value="3">生活</option>
+                        <?php foreach($categories as $category){ ?>
+                        <option value="<?php echo $category["id"]; ?>"> <?php echo $category["title"]; ?></option>
+                        <?php } ?>
                     </select>
                 </div>
                 <input type="submit" value="新增文章" class="btn btn-primary">

@@ -24,9 +24,9 @@
             </form>
         </div>
         <div class="col-4">
-            <ul>
+            <ul class="list-group">
                 <?php foreach($categories as $category){ ?>
-                <li class="d-flex justify-content-between">
+                <li class="list-group-item d-flex justify-content-between">
                     <?php echo $category["title"]; ?>
                     <form action="delete.php" method="post" class="d-inline-block">
                         <input type="hidden" name="id" value="<?php echo $category["id"];?>">
