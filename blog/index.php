@@ -13,9 +13,22 @@
 <div class="container">
     <?php   
         // echo $_SERVER["PHP_SELF"]; 
+        // echo "<br>";
         // echo $_SERVER["HTTP_HOST"]; 
+        // echo "<br>";
         // echo $_SERVER["REQUEST_URI"]; 
+        // echo "<br>";
         // echo $_SERVER["QUERY_STRING"]; 
+        // echo "<br>";
+
+        // echo basename(__DIR__);
+        // echo "<br>";
+        // echo basename(__FILE__);
+        // echo "<br>";
+        // echo dirname(__DIR__);
+        // echo "<br>";
+        // echo dirname(__FILE__);
+        // echo "<br>";
     ?>
     <div class="row justify-content-center">
         <?php foreach($posts as $post){ ?>
