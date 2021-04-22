@@ -6,11 +6,17 @@
  -->
 <?php 
     require_once("function.php"); 
-    $posts = showAllPosts();    
+    $posts = showAllPosts();  
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
 <div class="container">
+    <?php   
+        // echo $_SERVER["PHP_SELF"]; 
+        // echo $_SERVER["HTTP_HOST"]; 
+        // echo $_SERVER["REQUEST_URI"]; 
+        // echo $_SERVER["QUERY_STRING"]; 
+    ?>
     <div class="row justify-content-center">
         <?php foreach($posts as $post){ ?>
         <div class="col-10 border border-dark mb-3 p-5 rounded">

@@ -10,10 +10,10 @@
         <ul class="navbar-nav">
             <?php if(isset($_SESSION["AUTH"])){ ?> 
             <li class="nav-item">
-                <a class="nav-link" href="post-create.php">新增文章</a>
+                <a class="nav-link" href="/PHP-24-20210318/blog/post-create.php">新增文章</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="category/create.php">新增分類</a>
+                <a class="nav-link" href="/PHP-24-20210318/blog/category/create.php">新增分類</a>
             </li>
             <?php } ?>
         </ul>
