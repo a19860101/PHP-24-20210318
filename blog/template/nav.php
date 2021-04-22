@@ -12,6 +12,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="post-create.php">新增文章</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="category/create.php">新增分類</a>
+            </li>
             <?php } ?>
         </ul>
         <ul class="navbar-nav ml-auto">
