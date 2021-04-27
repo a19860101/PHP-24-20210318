@@ -5,6 +5,28 @@
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
+<style>
+    .gallery {
+        position: relative;
+    }
+    .gallery-overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.5);
+        top: 0;
+    }
+    .gallery-container {
+        background-color: #fff;
+        padding: 50px;
+        position: relative;
+        top: 0;
+        width: 80%;
+        height: 80vh;
+        margin: auto;
+    }
+
+</style>
 
 <div class="container">
     <div class="row justify-content-center">
