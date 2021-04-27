@@ -26,10 +26,11 @@
         global $now;
         session_start();
         extract($request);
-        $sql = "INSERT INTO posts(title, content, category_id, member_id, created_at, updated_at)VALUES(?,?,?,?,?,?)";
+        $sql = "INSERT INTO posts(title, content, category_id, member_id, cover,created_at, updated_at)VALUES(?,?,?,?,?,?,?)";
         $member_id = $_SESSION["AUTH"]["id"];
+        $cover = substr($cover, 7);
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$title, $content, $category_id, $member_id, $now, $now]);
+        $stmt->execute([$title, $content, $category_id, $member_id, $cover ,$now, $now]);
     }
     function editPost($id){
         global $pdo;

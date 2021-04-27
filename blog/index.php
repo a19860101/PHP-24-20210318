@@ -34,6 +34,7 @@
     <div class="row justify-content-center">
         <?php foreach($posts as $post){ ?>
         <div class="col-10 border border-dark mb-3 p-5 rounded">
+            <img src="images/<?php echo $post["cover"];?>" width="100%">
             <h2><?php echo $post["title"];?></h2>
             <div>
                 分類: <a href="post-categories.php?category_id=<?php echo $post["category_id"];?>" class="badge badge-warning"><?php echo $post["c_title"];?></a>
