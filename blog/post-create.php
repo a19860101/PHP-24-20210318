@@ -43,9 +43,10 @@
                     
                     <?php if(isset($_GET["cover"])){ ?>
                         <img src="<?php echo $_GET["cover"];?>" width="100">
-                        <input type="text" name="cover" value="<?php echo $_GET["cover"];?>">
+                        <input type="hidden" name="cover" value="<?php echo $_GET["cover"];?>">
                         <a href="#" class="selectImg">切換圖片</a>
                     <?php }else{ ?>
+                        <input type="hidden" name="cover" value="">
                         <a href="#" class="selectImg">選擇圖片</a>
                     <?php } ?>
                     
