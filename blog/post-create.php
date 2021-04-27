@@ -8,11 +8,20 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-10 col-md-6">
             <form action="post-store.php" method="post">
                 <div class="form-group">
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control">
+                </div>
+                <div>
+                    <label for="cover">封面圖片</label>
+                    <input type="file" name="cover">
+
+                    <div>
+                        <a href="#">選擇圖片</a>
+                    </div>
+                    
                 </div>
                 <div class="form-group">
                     <label for="content">文章內容</label>
