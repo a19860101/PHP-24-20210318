@@ -70,6 +70,11 @@
 <div class="gallery">
     <div class="gallery-overlay"></div>
     <div class="gallery-container">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="cover">
+            <input type="submit" value="上傳圖片">
+        </form>
+        <hr>
         <?php 
             $galleries = glob("images/*.{jpeg,jpg,png,gif,bmp,webp}",GLOB_BRACE);
             foreach($galleries as $g){
