@@ -7,23 +7,24 @@
 <?php include("template/nav.php"); ?>
 <style>
     .gallery {
-        position: relative;
+        display: none;
     }
     .gallery-overlay {
         position: fixed;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0,0,0,.8);
         top: 0;
     }
     .gallery-container {
         background-color: #fff;
         padding: 50px;
-        position: relative;
-        top: 0;
+        position: absolute;
+        top: 5%;
         width: 80%;
-        height: 80vh;
-        margin: auto;
+        /* height: 80vh; */
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 </style>
@@ -38,7 +39,7 @@
                 </div>
                 <div>
                     <label for="cover">封面圖片</label>
-                    <a href="#">選擇圖片</a>
+                    <a href="#" class="selectImg">選擇圖片</a>
                     
                 </div>
                 <div class="form-group">
@@ -73,9 +74,14 @@
         <?php } ?>
     </div>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace( 'content' );
+    $(function(){
+        $('.selectImg').click(function(){
+            $('.gallery').show();
+        })
+    })
 </script>
 <?php include("template/footer.php"); ?>
