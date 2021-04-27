@@ -20,15 +20,17 @@
             $('form').submit(function(){
                 console.log('submit');
                 $.ajax({
-                    url: 'test.php',
-                    type:'post',
+                    url: 'test2.php',
+                    // type:'post',
+                    type:'get',
                     data:{
                         user: $('#user').val() ,
                         mail: $('#mail').val()
                     },
                     success(data){
                         console.log(this.data);
-                        // location.href='test2.php'
+                        // location.href='test2.php?'+this.data
+                        location.href=this.url;
                     }
                 })
 

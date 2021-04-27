@@ -39,7 +39,14 @@
                 </div>
                 <div>
                     <label for="cover">封面圖片</label>
-                    <a href="#" class="selectImg">選擇圖片</a>
+                    
+                    
+                    <?php if(isset($_GET["cover"])){ ?>
+                    <img src="<?php echo $_GET["cover"];?>" width="100">
+                        <a href="#" class="selectImg">切換圖片</a>
+                    <?php }else{ ?>
+                        <a href="#" class="selectImg">選擇圖片</a>
+                    <?php } ?>
                     
                 </div>
                 <div class="form-group">
@@ -82,6 +89,21 @@
 <script>
     CKEDITOR.replace( 'content' );
     $(function(){
+        $('.selected').click(function(){
+            $.ajax({
+                url:'post-create.php',
+                type:'get',
+                data:{
+                    cover: $('.cover:checked').val()
+                },
+                success(){
+                    // console.log(this.url);
+                    location.href=this.url;
+                    $('.gallery').hide();
+
+                }
+            })
+        })
         $('.selectImg').click(function(){
             $('.gallery').show();
         })
