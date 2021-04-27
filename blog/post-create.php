@@ -16,11 +16,7 @@
                 </div>
                 <div>
                     <label for="cover">封面圖片</label>
-                    <input type="file" name="cover">
-
-                    <div>
-                        <a href="#">選擇圖片</a>
-                    </div>
+                    <a href="#">選擇圖片</a>
                     
                 </div>
                 <div class="form-group">
@@ -41,6 +37,21 @@
         </div>
     </div>
 </div>
+<div class="gallery">
+    <div class="gallery-overlay"></div>
+    <div class="gallery-container">
+        <?php 
+            $galleries = glob("images/*.{jpeg,jpg,png,gif,bmp,webp}",GLOB_BRACE);
+            foreach($galleries as $g){
+        ?>
+        <label for="<?php echo $g;?>">
+            <img src="<?php echo $g;?>" width="150">
+            <input type="radio" name="cover" class="cover" value="<?php echo $g;?>" id="<?php echo $g;?>">
+        </label>
+        <?php } ?>
+    </div>
+</div>
+
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace( 'content' );
