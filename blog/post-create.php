@@ -72,10 +72,13 @@
             <input type="radio" name="cover" class="cover" value="<?php echo $g;?>" id="<?php echo $g;?>">
         </label>
         <?php } ?>
+        <br>
+        <a href="#" class="selected btn btn-primary float-right">送出</a>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
+<?php include("template/footer.php"); ?>
 <script>
     CKEDITOR.replace( 'content' );
     $(function(){
@@ -84,4 +87,3 @@
         })
     })
 </script>
-<?php include("template/footer.php"); ?>
