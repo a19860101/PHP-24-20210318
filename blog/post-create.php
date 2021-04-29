@@ -25,6 +25,7 @@
         /* height: 80vh; */
         left: 50%;
         transform: translateX(-50%);
+        z-index: 9999;
     }
 
 </style>
