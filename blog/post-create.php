@@ -97,7 +97,11 @@
 <script>
     // CKEDITOR.replace( 'content' );
     tinymce.init({
-        selector: '#content'
+        selector: '#content',
+        language: 'zh_TW',
+        menubar: false,
+        plugins: 'image',
+        toolbar: 'undo redo | image | styleselect | bold italic forecolor underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent'
     });
     $(function(){
         $('.selected').click(function(){
