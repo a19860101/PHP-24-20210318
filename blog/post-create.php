@@ -100,8 +100,13 @@
         selector: '#content',
         language: 'zh_TW',
         menubar: false,
-        plugins: 'image',
-        toolbar: 'undo redo | image | styleselect | bold italic forecolor underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent'
+        plugins: 'image code link',
+        toolbar: 'undo redo | image code link| styleselect | bold italic forecolor underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent',
+        images_upload_url: '',
+        automatic_uploads: true,
+        image_title: true,
+        file_picker_types: 'image'
+
     });
     $(function(){
         $('.selected').click(function(){
