@@ -137,10 +137,10 @@
                     cover: $('.cover:checked').val()
                 },
                 success(){
-                    console.log(this);
+                    // console.log('test');
                     // console.log(this.url);
-                    // location.href=this.url;
-                    // $('.gallery').hide();
+                    location.href=this.url;
+                    $('.gallery').hide();
 
                 }
             })
