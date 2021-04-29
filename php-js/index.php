@@ -37,11 +37,12 @@
         $(function(){
             $('.delete').click(function(){
                 $.ajax({
-                    url: 'delete.php',
+                    url: 'index.php',
                     type: 'post',
                     data: $('form').serialize(),
                     success(){
-                        console.log('delete');
+                        console.log(this);
+                        // location.href='index.php'
                     }
                 })
             })
