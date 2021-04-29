@@ -25,7 +25,27 @@
             <b><?php echo $student["name"]; ?></b>__
             <span><?php echo $student["phone"]; ?></span>__
             <span><?php echo $student["created_at"]; ?></span>
+            <form action="javascript:;" method="post">
+                <input type="hidden" name="id" value="<?php echo $student["id"]; ?>">
+                <input type="submit" value="刪除" class="delete">
+            </form>
+            <hr>
         </div>
     <?php } ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.delete').click(function(){
+                $.ajax({
+                    url: 'delete.php',
+                    type: 'post',
+                    data: $('form').serialize(),
+                    success(){
+                        console.log('delete');
+                    }
+                })
+            })
+        })
+    </script>
 </body>
 </html>
