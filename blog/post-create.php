@@ -90,11 +90,15 @@
         <a href="#" class="selected btn btn-primary float-right">送出</a>
     </div>
 </div>
-<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script> -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 <?php include("template/footer.php"); ?>
 <script>
-    CKEDITOR.replace( 'content' );
+    // CKEDITOR.replace( 'content' );
+    tinymce.init({
+        selector: '#content'
+    });
     $(function(){
         $('.selected').click(function(){
             $.ajax({
@@ -104,9 +108,10 @@
                     cover: $('.cover:checked').val()
                 },
                 success(){
+                    console.log(this);
                     // console.log(this.url);
-                    location.href=this.url;
-                    $('.gallery').hide();
+                    // location.href=this.url;
+                    // $('.gallery').hide();
 
                 }
             })
