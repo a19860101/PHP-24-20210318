@@ -2,8 +2,8 @@
     class Person {
         public $gender = "Male";
         public $height;
-        public $weight;
         private $skin = "yellow";
+        protected $weight = "50kg";
 
         function walk(){
             return "walk";
@@ -12,20 +12,32 @@
             return $this->gender = "Female";
         }
         function hello(){
-            return $this->skin;
+            // return $this->skin;
+            return $this->weight;
         }
     }
 
+    $mary = new Person;
+    // echo $mary->skin;
+    // echo $mary->hello();
+
     class Asian extends Person{
         public $gender = "Female";
+
+        function test(){
+            return $this->weight;
+        }
     }
 
     $lee = new Asian;
-    echo $lee->hello();
+    // echo $lee->hello();
     // echo $lee->walk();
     // echo $lee->pregnent();
     // echo $lee->gender;
     // echo $lee->skin ;
-    $mary = new Person;
-    // echo $mary->skin;
-    echo $mary->hello();
+    // echo $lee->test();
+
+        echo $lee->weight;
+
+
+
