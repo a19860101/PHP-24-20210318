@@ -29,6 +29,7 @@
                 <input type="hidden" name="id" value="<?php echo $student["id"]; ?>">
                 <input type="submit" value="刪除" class="delete" id="<?php echo $student["id"]; ?>">
             </form>
+            <a href="edit.php?id=<?php echo $student["id"];?>">編輯</a>
             <hr>
         </div>
     <?php } ?>
@@ -36,17 +37,19 @@
     <script>
         $(function(){
             $('.delete').click(function(){
-                $.ajax({
-                    url: 'delete.php',
-                    type: 'post',
-                    data: {
-                        id:$(this).attr('id')
-                    },
-                    success(){
-                        console.log(this);
-                        location.href='index.php'
-                    }
-                })
+                if(confirm('確認刪除?')){
+                    $.ajax({
+                        url: 'delete.php',
+                        type: 'post',
+                        data: {
+                            id:$(this).attr('id')
+                        },
+                        success(){
+                            console.log(this);
+                            location.href='index.php'
+                        }
+                    })
+                }
             })
         })
     </script>
