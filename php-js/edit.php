@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>編輯學員資料</h1>
-    <form action="javascript:;" method="post">
+    <form action="update.php" method="post">
         <div>
             <label for="">姓名</label>
             <input type="text" name="name" value="<?php echo $student["name"];?>">
@@ -63,7 +63,8 @@
             <label for="">備註</label>
             <textarea name="content" id="" cols="30" rows="10"><?php echo $student["content"];?></textarea>
         </div>
-        <input type="submit" value="新增">
+        <input type="hidden" name="id" value="<?php echo $student["id"];?>">
+        <input type="submit" value="儲存">
         <input type="button" value="取消" onclick="history.back()">
         <input type="button" value="取消" onclick="location.href='index.php'">
     </form>
@@ -71,12 +72,13 @@
     <script>
         $(function(){
             $('form').submit(function(){
+                let data = $('form').serialize();
                 $.ajax({
-                    url: 'store.php',
+                    url: 'update.php',
                     type:'post',
-                    data: $('form').serialize(),
+                    data: data,
                     success(){
-                        console.log('success');
+                        console.log(this);
                         location.href = "index.php"
                     }
                 });
