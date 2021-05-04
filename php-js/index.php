@@ -27,7 +27,7 @@
             <span><?php echo $student["created_at"]; ?></span>
             <form action="javascript:;" method="post">
                 <input type="hidden" name="id" value="<?php echo $student["id"]; ?>">
-                <input type="submit" value="刪除" class="delete">
+                <input type="submit" value="刪除" class="delete" id="<?php echo $student["id"]; ?>">
             </form>
             <hr>
         </div>
@@ -37,12 +37,14 @@
         $(function(){
             $('.delete').click(function(){
                 $.ajax({
-                    url: 'index.php',
+                    url: 'delete.php',
                     type: 'post',
-                    data: $('form').serialize(),
+                    data: {
+                        id:$(this).attr('id')
+                    },
                     success(){
                         console.log(this);
-                        // location.href='index.php'
+                        location.href='index.php'
                     }
                 })
             })
