@@ -1,11 +1,14 @@
 <?php
-    require_once("user.php");
-    require_once("post.php");
+    require_once("gjun/user.php");
+    require_once("gjun/post.php");
 
-    use App\Post\Show;
+    use Oop\Gjun\User;
 
-    $test = new Show;
+    $john = new User;
+
+    echo $john->index();
+
+    $test = new Oop\Gjun\Post ;
     echo $test->index();
 
-    $test2 = new App\User\Show;
-    echo $test2->index();
+
